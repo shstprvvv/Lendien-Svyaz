@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Безопасность — Связь</title>
+  <meta name="description" content="Почему сервер Связи технически не может прочитать ваши сообщения. Два слоя шифрования, идентичность без аккаунта, приватный поиск контактов." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">С</span>
+        Связь
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="index.html">Главная</a>
+        <a href="security.html" aria-current="page">Безопасность</a>
+        <a href="federation.html">Федерация</a>
+        <a href="support.html">Поддержка</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-top: 52px;">
+      <div class="container">
+        <p class="hero-kicker">Безопасность</p>
+        <h1>Сервер не может прочитать ваши сообщения — это не обещание, а технический факт</h1>
+        <p class="hero-lead">
+          Большинство сервисов говорят «мы не читаем ваши переписки» — но технически могут. В Связи это невозможно по архитектуре: сервер получает только зашифрованные данные, ключей от которых у него никогда не было.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-no-reveal">
+      <div class="container">
+        <h2 data-ai="fade-up" data-ai-delay="0">Как именно это работает</h2>
+        <p class="section-lead" data-ai="fade-up" data-ai-delay="0.06">Три шага, которые гарантируют, что ни один сервер не прочитает вашу переписку — даже при физическом изъятии оборудования.</p>
+        <div class="security-flow" style="margin-top: 28px;">
+          <div class="flow-step" data-ai="slide-left" data-ai-delay="0.08">
+            <div class="flow-num">1</div>
+            <div class="flow-text">
+              <strong>Ключ генерируется на вашем устройстве</strong>
+              <p>При первом запуске приложение создаёт уникальную криптографическую пару ключей. Приватный ключ никогда не покидает телефон — он не передаётся ни на какой сервер при регистрации, синхронизации или резервном копировании.</p>
+            </div>
+          </div>
+          <div class="flow-arrow" data-ai="fade-up" data-ai-delay="0.18">→</div>
+          <div class="flow-step" data-ai="slide-left" data-ai-delay="0.2">
+            <div class="flow-num">2</div>
+            <div class="flow-text">
+              <strong>Сообщение шифруется до отправки</strong>
+              <p>Перед тем как сообщение покидает устройство, оно запечатывается так, что расшифровать его может только получатель. Сервер получает нечитаемый набор байт — и не имеет математической возможности его открыть.</p>
+            </div>
+          </div>
+          <div class="flow-arrow" data-ai="fade-up" data-ai-delay="0.28">→</div>
+          <div class="flow-step" data-ai="slide-left" data-ai-delay="0.3">
+            <div class="flow-num">3</div>
+            <div class="flow-text">
+              <strong>Расшифровывается только у адресата</strong>
+              <p>Приватный ключ получателя тоже хранится только на его устройстве. Никакая третья сторона — даже сами создатели Связи — физически не может прочитать ваш чат.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt section-no-reveal">
+      <div class="container">
+        <h2 data-ai="fade-up" data-ai-delay="0">Пять гарантий безопасности</h2>
+        <div class="principles">
+
+          <article class="principle-item" data-ai="fade-up" data-ai-delay="0.04">
+            <div class="principle-num">01</div>
+            <div>
+              <h3>Два независимых слоя шифрования</h3>
+              <p>
+                Первый слой — транспортный: само соединение между устройствами шифруется протоколами Noise XX или TLS 1.3, теми же стандартами, что используются в банкинге. Второй слой — end-to-end: каждое сообщение дополнительно запечатывается индивидуальными ключами отправителя и получателя. Даже если транспортный слой скомпрометировать — сообщение всё равно останется нечитаемым.
+              </p>
+            </div>
+          </article>
+
+          <article class="principle-item" data-ai="fade-up" data-ai-delay="0.12">
+            <div class="principle-num">02</div>
+            <div>
+              <h3>Идентичность без центральной базы данных</h3>
+              <p>
+                В WhatsApp, Signal и Telegram ваша идентичность привязана к номеру телефона — он хранится на сервере компании. В Связи идентичность — это математический ключ на вашем устройстве. Нет центрального реестра «кто есть кто» — нечего взломать, нечего передать по запросу.
+              </p>
+            </div>
+          </article>
+
+          <article class="principle-item" data-ai="fade-up" data-ai-delay="0.2">
+            <div class="principle-num">03</div>
+            <div>
+              <h3>Аппаратная защита истории чатов</h3>
+              <p>
+                История переписки хранится в зашифрованной базе данных прямо на телефоне. Ключ от неё защищён специальным чипом безопасности — Secure Enclave на iPhone или Titan M на Android. Это тот же чип, который хранит данные Face ID и Apple Pay. Без разблокировки биометрией или паролем история недоступна даже при физическом подключении телефона к компьютеру.
+              </p>
+            </div>
+          </article>
+
+          <article class="principle-item" data-ai="fade-up" data-ai-delay="0.28">
+            <div class="principle-num">04</div>
+            <div>
+              <h3>Поиск контактов без раскрытия номеров</h3>
+              <p>
+                Когда вы ищете коллегу по номеру телефона, сам номер на сервер не передаётся. Вместо этого используется криптографический протокол OPRF: телефон отправляет математическое преобразование номера, сервер возвращает математическое преобразование ответа — и только клиент может вычислить итог. Сервер видит математику, но не видит реальные номера.
+              </p>
+            </div>
+          </article>
+
+          <article class="principle-item" data-ai="fade-up" data-ai-delay="0.36">
+            <div class="principle-num">05</div>
+            <div>
+              <h3>Открытый протокол — можно проверить самостоятельно</h3>
+              <p>
+                Безопасность не должна быть «поверьте нам на слово». Протокол Связи ($Proto) задокументирован полностью: транспорт, шифрование, формат каждого сообщения. Любой специалист по информационной безопасности может проверить, что архитектура соответствует заявленным гарантиям.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="section-no-reveal">
+      <div class="container">
+        <h2 data-ai="fade-up" data-ai-delay="0">Что происходит, если сервер взломают</h2>
+        <p class="section-lead" data-ai="fade-up" data-ai-delay="0.06">
+          Самый простой способ оценить безопасность мессенджера — представить, что злоумышленник получил полный доступ к серверу. Что он увидит?
+        </p>
+        <div class="grid-3">
+          <article class="card" data-ai="scale-in" data-ai-delay="0.08" style="border-color: rgba(37,99,235,0.28);">
+            <h3 style="color: var(--accent);">Связь</h3>
+            <p>Набор зашифрованных блоков данных, которые невозможно расшифровать без приватных ключей пользователей. Ключи на сервере никогда не хранились.</p>
+          </article>
+          <article class="card" data-ai="scale-in" data-ai-delay="0.16">
+            <h3>WhatsApp / Signal</h3>
+            <p>Содержимое переписок недоступно — E2E работает. Но утекают метаданные: кто кому писал, как часто, когда был онлайн.</p>
+          </article>
+          <article class="card" data-ai="scale-in" data-ai-delay="0.24">
+            <h3>Telegram (обычные чаты)</h3>
+            <p>Все облачные переписки доступны в открытом виде — Telegram хранит их на серверах расшифрованными.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt section-no-reveal">
+      <div class="container">
+        <h2 data-ai="fade-up" data-ai-delay="0">Сравнение по ключевым параметрам безопасности</h2>
+        <div class="table-wrap" data-ai="blur-in" data-ai-delay="0.1">
+          <table class="compare">
+            <thead>
+              <tr>
+                <th></th>
+                <th class="col-proto">Связь</th>
+                <th>WhatsApp</th>
+                <th>Signal</th>
+                <th>Telegram</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>E2E для всех чатов</td>
+                <td class="col-proto">✓ Всегда</td>
+                <td>✓ Да</td>
+                <td>✓ Да</td>
+                <td>✗ Только Secret Chats</td>
+              </tr>
+              <tr>
+                <td>Сервер может прочитать сообщения</td>
+                <td class="col-proto">Нет — технически невозможно</td>
+                <td>Нет, но метаданные — да</td>
+                <td>Нет</td>
+                <td>Да — обычные чаты хранятся открытыми</td>
+              </tr>
+              <tr>
+                <td>Идентичность привязана к телефону</td>
+                <td class="col-proto">Нет — ключ на устройстве</td>
+                <td>Да</td>
+                <td>Да</td>
+                <td>Да</td>
+              </tr>
+              <tr>
+                <td>История зашифрована на диске</td>
+                <td class="col-proto">Да — аппаратный ключ</td>
+                <td>Частично</td>
+                <td>Да</td>
+                <td>Нет</td>
+              </tr>
+              <tr>
+                <td>Данные остаются у вас</td>
+                <td class="col-proto">Да</td>
+                <td>Нет — у Meta</td>
+                <td>Нет — у Signal Foundation</td>
+                <td>Нет — у Telegram</td>
+              </tr>
+              <tr>
+                <td>Звонки через чужой сервер</td>
+                <td class="col-proto">Нет — прямое соединение</td>
+                <td>Да</td>
+                <td>Да</td>
+                <td>Да</td>
+              </tr>
+              <tr>
+                <td>Открытый протокол</td>
+                <td class="col-proto">Да — полная спецификация</td>
+                <td>Частично</td>
+                <td>Да</td>
+                <td>Частично</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-no-reveal">
+      <div class="container">
+        <div class="cta-strip" data-ai="scale-in" data-ai-delay="0.06">
+          <h2>Остались вопросы о безопасности?</h2>
+          <p>Наш ассистент знает все детали протокола и ответит на любой вопрос.</p>
+          <a class="btn btn-primary" href="support.html">Задать вопрос</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container inner">
+      <p class="footer-copy">Связь — защищённый мессенджер. Протокол $Proto задокументирован в открытой спецификации.</p>
+      <div class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="support.html">Поддержка</a>
+        <a href="../PROTOCOL_ru.md">Протокол $Proto</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

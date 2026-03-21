@@ -1,0 +1,41 @@
+# OS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Flutter/Dart (если появится папка lib/)
+.dart_tool/
+build/
+.pub-cache/
+.packages
+*.log
+*.jks
+*.keystore
+
+# Go (если появится p2p_network/go/)
+bin/
+pkg/
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out
+vendor/
+
+# Node/Web
+node_modules/
+npm-debug.log
+yarn-error.log
+.env
+.env.local

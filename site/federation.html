@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Федерация — Связь</title>
+  <meta name="description" content="Свой сервер Связи за 5 минут — ваши данные у вас, но вы в общей сети. Федерация: как email, только для мессенджера." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">С</span>
+        Связь
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="index.html">Главная</a>
+        <a href="security.html">Безопасность</a>
+        <a href="federation.html" aria-current="page">Федерация</a>
+        <a href="support.html">Поддержка</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-top: 52px;">
+      <div class="container">
+        <p class="hero-kicker">Федерация</p>
+        <h1>Ваш сервер, ваши данные — и при этом вы в общей сети</h1>
+        <p class="hero-lead">
+          Вы поднимаете свой сервер за 5 минут. Ваши сообщения хранятся только у вас. И при этом вы не изолированы — ваши сотрудники общаются с любым пользователем сети Связь, как будто все на одной платформе.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#how-it-works">Как это работает</a>
+          <a class="btn btn-ghost" href="support.html">Задать вопрос</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-no-reveal">
+      <div class="container">
+        <h2 data-ai="fade-up" data-ai-delay="0">Это как электронная почта</h2>
+        <p class="section-lead" data-ai="fade-up" data-ai-delay="0.06">Лучшая аналогия — email. У кого-то ящик на Gmail, у кого-то на Яндексе, у компании — корпоративный сервер. Но все они спокойно отправляют письма друг другу. Никто не обязан пользоваться одним и тем же сервисом.</p>
+        <div class="fed-analogy">
+          <div class="fed-analogy-col" data-ai="scale-in" data-ai-delay="0.1">
+            <div class="fed-analogy-icon">📧</div>
+            <p class="fed-analogy-title">Email — так уже работает</p>
+            <p class="fed-analogy-text">Gmail, Яндекс, корпоративный сервер — разные системы, но письма доходят везде.</p>
+          </div>
+          <div class="fed-analogy-eq" data-ai="fade-up" data-ai-delay="0.2">=</div>
+          <div class="fed-analogy-col fed-analogy-col--accent" data-ai="scale-in" data-ai-delay="0.22">
+            <div class="fed-analogy-icon">💬</div>
+            <p class="fed-analogy-title">Связь — так работает мессенджер</p>
+            <p class="fed-analogy-text">Ваш сервер, публичная сеть, сервер партнёра — разные узлы, но сообщения доходят везде.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt section-no-reveal" id="how-it-works">
+      <div class="container">
+        <h2 data-ai="fade-up" data-ai-delay="0">Как устроена федерация</h2>
+        <p class="section-lead" data-ai="fade-up" data-ai-delay="0.06">Каждый сервер — независимый узел. Они знают друг о друге и умеют передавать сообщения между своими пользователями.</p>
+
+        <div class="fed-diagram" data-ai="blur-in" data-ai-delay="0.12">
+          <div class="fed-node fed-node--you">
+            <div class="fed-node-icon">🏢</div>
+            <strong>Ваш сервер</strong>
+            <span>Ваши данные<br>Ваши правила</span>
+          </div>
+
+          <div class="fed-lines">
+            <div class="fed-line"></div>
+            <div class="fed-center-node">
+              <div class="fed-center-icon">🌐</div>
+              <strong>Федерация</strong>
+              <span>Общая сеть Связь</span>
+            </div>
+            <div class="fed-line"></div>
+          </div>
+
+          <div class="fed-others">
+            <div class="fed-node fed-node--other">
+              <div class="fed-node-icon">👥</div>
+              <strong>Публичная сеть</strong>
+              <span>Все пользователи<br>Связь</span>
+            </div>
+            <div class="fed-node fed-node--other">
+              <div class="fed-node-icon">🤝</div>
+              <strong>Сервер партнёра</strong>
+              <span>Другая компания<br>тоже на Связи</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="fed-caption" data-ai="fade-up" data-ai-delay="0.18">
+          Стрелки означают: ваши сотрудники могут писать в любой узел федерации. Данные при этом остаются на вашем сервере — только сами сообщения передаются адресату.
+        </div>
+      </div>
+    </section>
+
+    <section class="section-no-reveal">
+      <div class="container">
+        <h2 data-ai="fade-up" data-ai-delay="0">Что это даёт на практике</h2>
+        <div class="principles">
+          <article class="principle-item" data-ai="slide-right" data-ai-delay="0.06">
+            <div class="principle-num">01</div>
+            <div>
+              <h3>Полный контроль над данными</h3>
+              <p>История переписок, файлы, список пользователей — всё хранится исключительно на вашем сервере. Вы определяете, кто имеет доступ, как долго хранятся данные и в какой юрисдикции они находятся. Никакой иностранной компании в цепочке.</p>
+            </div>
+          </article>
+          <article class="principle-item" data-ai="slide-right" data-ai-delay="0.14">
+            <div class="principle-num">02</div>
+            <div>
+              <h3>Не нужно тащить всех на свою платформу</h3>
+              <p>Обычная проблема с корпоративными мессенджерами: партнёр не хочет устанавливать ещё один инструмент. С федерацией — он остаётся в своей системе, вы в своей, а переписка работает. Как с email.</p>
+            </div>
+          </article>
+          <article class="principle-item" data-ai="slide-right" data-ai-delay="0.22">
+            <div class="principle-num">03</div>
+            <div>
+              <h3>Изоляция без закрытости</h3>
+              <p>Вы настраиваете, с кем вашим сотрудникам можно общаться через федерацию — с конкретными серверами, с публичной сетью, или только внутри компании. Гранулярный контроль без сложных настроек.</p>
+            </div>
+          </article>
+          <article class="principle-item" data-ai="slide-right" data-ai-delay="0.3">
+            <div class="principle-num">04</div>
+            <div>
+              <h3>Нет единой точки отказа</h3>
+              <p>Если публичная сеть недоступна — внутренние коммуникации компании продолжают работать. Ваш сервер независим.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt section-no-reveal">
+      <div class="container">
+        <h2 data-ai="fade-up" data-ai-delay="0">Запуск за 5 минут</h2>
+        <p class="section-lead" data-ai="fade-up" data-ai-delay="0.06">Не нужна команда DevOps и не нужно разбираться в протоколах. Один файл, несколько параметров — сервер готов и подключён к сети.</p>
+        <div class="setup-steps">
+          <div class="setup-step" data-ai="fade-up" data-ai-delay="0.1">
+            <div class="setup-num">1</div>
+            <div class="setup-text">
+              <strong>Любой VPS</strong>
+              <p>Самый дешёвый сервер от любого провайдера: 1 ядро, 1 ГБ RAM. Подойдёт любая Linux-система.</p>
+            </div>
+          </div>
+          <div class="setup-step" data-ai="fade-up" data-ai-delay="0.18">
+            <div class="setup-num">2</div>
+            <div class="setup-text">
+              <strong>Скачать и запустить</strong>
+              <p>Один исполняемый файл. Указать IP-адрес — и сервер автоматически подключается к федерации.</p>
+            </div>
+          </div>
+          <div class="setup-step" data-ai="fade-up" data-ai-delay="0.26">
+            <div class="setup-num">3</div>
+            <div class="setup-text">
+              <strong>Пригласить команду</strong>
+              <p>Отправить ссылку сотрудникам — они выбирают ваш сервер при входе. Всё, больше ничего не нужно.</p>
+            </div>
+          </div>
+        </div>
+        <p class="fed-setup-note" data-ai="fade-up" data-ai-delay="0.32">В отличие от Matrix, XMPP и других федеративных систем не нужно часами разбираться в конфигурации, сертификатах и синапсах. Архитектура Связи сделана так, чтобы это занимало минуты.</p>
+      </div>
+    </section>
+
+    <section class="section-no-reveal">
+      <div class="container">
+        <h2 data-ai="fade-up" data-ai-delay="0">Кому это нужно</h2>
+        <div class="grid-3">
+          <article class="card" data-ai="scale-in" data-ai-delay="0.08">
+            <h3>🏭 Компании с требованиями к данным</h3>
+            <p>Регуляторные требования, корпоративная политика или просто здравый смысл: данные сотрудников не должны покидать вашу инфраструктуру.</p>
+          </article>
+          <article class="card" data-ai="scale-in" data-ai-delay="0.16">
+            <h3>🤝 Команды с внешними партнёрами</h3>
+            <p>Подрядчики, клиенты, партнёрские компании — все на разных платформах. Федерация снимает этот барьер.</p>
+          </article>
+          <article class="card" data-ai="scale-in" data-ai-delay="0.24">
+            <h3>🏛️ Государственные структуры</h3>
+            <p>Полный суверенитет над инфраструктурой, российская юрисдикция, независимость от иностранных сервисов.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt section-no-reveal">
+      <div class="container cta-strip" data-ai="scale-in" data-ai-delay="0.06">
+        <h2>Хотите поднять свой сервер?</h2>
+        <p>Задайте вопрос ассистенту — поможет разобраться с любыми деталями.</p>
+        <a class="btn btn-primary" href="support.html">Задать вопрос</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container inner">
+      <p class="footer-copy">Связь — защищённый мессенджер с федеративной архитектурой. Ваш сервер, ваши данные, общая сеть.</p>
+      <div class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="security.html">Безопасность</a>
+        <a href="support.html">Поддержка</a>
+        <a href="../PROTOCOL_ru.md">Протокол $Proto</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

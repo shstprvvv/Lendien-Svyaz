@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Поддержка — Связь</title>
+  <meta name="description" content="AI-ассистент поддержки Связь — задайте любой вопрос о продукте." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/site.js" defer></script>
+</head>
+<body class="chat-page">
+  <header class="site-header">
+    <div class="container inner">
+      <a class="logo" href="index.html">
+        <span class="logo-mark">С</span>
+        Связь
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="index.html">Главная</a>
+        <a href="security.html">Безопасность</a>
+        <a href="federation.html">Федерация</a>
+        <a href="support.html" aria-current="page">Поддержка</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="chat-main">
+    <div class="chat-wrap" data-ai="scale-in" data-ai-delay="0">
+      <div class="chat-header" data-ai="fade-up" data-ai-delay="0.06">
+        <div class="chat-agent-avatar">С</div>
+        <div>
+          <p class="chat-agent-name">Связь — ассистент</p>
+          <p class="chat-agent-status"><span class="chat-online-dot"></span>Онлайн</p>
+        </div>
+      </div>
+
+      <div class="chat-messages" id="chatMessages" role="log" aria-live="polite">
+        <div class="chat-msg chat-msg--bot" data-ai="fade-up" data-ai-delay="0.12">
+          <div class="chat-bubble">
+            Привет! Я знаю всё о мессенджере Связь. Спросите о безопасности, функциях, своём сервере — отвечу на любой вопрос.
+          </div>
+          <div class="chat-time" aria-hidden="true">только что</div>
+        </div>
+        <div class="chat-suggestions" id="chatSuggestions" data-ai="fade-up" data-ai-delay="0.2">
+          <button class="chat-pill" data-q="Чем вы отличаетесь от Telegram?">Чем отличаетесь от Telegram?</button>
+          <button class="chat-pill" data-q="Как настроить свой сервер?">Как настроить свой сервер?</button>
+          <button class="chat-pill" data-q="Насколько это безопасно?">Насколько это безопасно?</button>
+          <button class="chat-pill" data-q="Что такое федерация?">Что такое федерация?</button>
+        </div>
+      </div>
+
+      <form class="chat-form" id="chatForm" autocomplete="off" data-ai="fade-up" data-ai-delay="0.28">
+        <input
+          type="text"
+          id="chatInput"
+          class="chat-input"
+          placeholder="Напишите вопрос…"
+          maxlength="400"
+          aria-label="Введите вопрос"
+        />
+        <button type="submit" class="chat-send" aria-label="Отправить">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10L17 3L10 17L9 11L3 10Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </button>
+      </form>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container inner">
+      <p class="footer-copy">Связь — защищённый мессенджер с E2E-шифрованием; при желании — свой сервер у вас в контуре.</p>
+      <div class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="advantages.html">Преимущества</a>
+        <a href="../PROTOCOL_ru.md">Протокол $Proto</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  (function () {
+    var kb = [
+      {
+        keys: ["что такое", "что это", "расскажи о", "что за", "о продукте", "parley", "parley"],
+        answer: "Связь — защищённый мессенджер, в котором сообщения шифруются прямо на вашем устройстве до отправки. Даже если перехватить данные на сервере — прочитать их невозможно технически. Это не просто «галочка» в настройках, а архитектурная гарантия. Работает как привычный мессенджер: чаты, группы, звонки, файлы — но без зависимости от иностранных облаков."
+      },
+      {
+        keys: ["безопас", "шифров", "e2e", "конфиденциальн", "приватн"],
+        answer: "Каждое сообщение шифруется на вашем телефоне до отправки — ключ есть только у вас и собеседника. Сервер получает нечитаемый набор байт и не может это изменить даже по требованию. История чатов хранится зашифрованной прямо на диске телефона: ключ защищён аппаратным чипом (Face ID / Touch ID). Два независимых слоя шифрования: на транспорте и на уровне каждого сообщения."
+      },
+      {
+        keys: ["telegram", "телеграм", "mtproto"],
+        answer: "Главное отличие: в Telegram обычные облачные чаты не зашифрованы сквозным шифрованием — сервер Telegram видит их в открытом виде. E2E работает только в «Секретных чатах», которые мало кто использует. В Связи E2E включено для всех переписок по умолчанию, без выбора режима. Плюс — реле Связи в принципе не может расшифровать сообщения, это гарантировано технически."
+      },
+      {
+        keys: ["whatsapp", "вотсап", "meta", "мета"],
+        answer: "WhatsApp использует E2E-шифрование для содержимого сообщений, но принадлежит Meta (Facebook). Meta собирает метаданные: кому вы пишете, как часто, когда выходите онлайн — и использует это для таргетинга. Серверы в иностранной юрисдикции. Связь не собирает метаданные и разворачивается на ваших серверах — данные не покидают ваш периметр."
+      },
+      {
+        keys: ["signal", "сигнал"],
+        answer: "Signal — один из самых безопасных публичных мессенджеров, но у него есть ограничения: требует номер телефона для регистрации, серверы принадлежат американской некоммерческой организации, нельзя развернуть на своей инфраструктуре. Связь не требует номера телефона, работает на ваших серверах и не зависит от иностранной инфраструктуры."
+      },
+      {
+        keys: ["сервер", "реле", "self-hosted", "self hosted", "свой", "установить", "развернуть", "5 минут"],
+        answer: "Свой сервер — это проще, чем кажется. Один файл, несколько строк в терминале — и ваш сервер готов. Он автоматически подключается к общей федерации Связи: ваши пользователи смогут общаться как с людьми внутри вашего сервера, так и со всеми участниками общей сети. Минимальные требования: самый дешёвый VPS (1 ядро, 1 ГБ RAM)."
+      },
+      {
+        keys: ["федерац", "общая сеть", "общее пространство", "подключить", "контур"],
+        answer: "Федерация — это как email: у разных людей могут быть разные почтовые серверы (Gmail, Яндекс, корпоративный), но они спокойно переписываются друг с другом. В Связи так же: есть общая публичная сеть, и можно поднять свой сервер, который к ней подключается. Ваши сотрудники общаются внутри вашего изолированного пространства, но при желании — и с участниками общей сети."
+      },
+      {
+        keys: ["аккаунт", "регистрац", "номер телефона", "телефон"],
+        answer: "Классической регистрации с паролем и email нет. Идентичность — это криптографический ключ, который создаётся на вашем устройстве при первом запуске. Нет базы данных «номер телефона → пользователь» на чужом сервере. Для поиска коллег по номеру есть специальный протокол, при котором сервер не видит сами номера в открытом виде."
+      },
+      {
+        keys: ["звонок", "звонки", "voip", "голосов"],
+        answer: "Голосовые звонки в Связи проходят напрямую между устройствами — аудиопоток не идёт через сервер. В WhatsApp, Telegram и Signal звонки маршрутизируются через их серверы. P2P звонки означают меньшую задержку и принципиальную невозможность перехвата на сервере."
+      },
+      {
+        keys: ["файл", "файлы", "документ", "фото", "видео"],
+        answer: "Файлы до 1 ГБ: документы, фото, видео, голосовые сообщения. Передача идёт через ваш реле-сервер с шифрованием — сервер хранит зашифрованный файл до момента, пока получатель не заберёт его. Потом автоматически удаляет."
+      },
+      {
+        keys: ["группа", "группов", "чат"],
+        answer: "Групповые чаты поддерживаются. Техническая особенность: группы не хранятся как отдельная сущность на сервере — сервер только доставляет зашифрованные сообщения каждому участнику. Это значит, что сервер не знает состав группы и не может восстановить историю."
+      },
+      {
+        keys: ["скачать", "как начать", "попробовать", "ios", "android", "приложение"],
+        answer: "Мобильное приложение для iOS и Android — на странице загрузки. Для использования в публичной сети регистрация занимает несколько секунд. Для корпоративного развёртывания на своей инфраструктуре — напишите в поддержку, поможем с настройкой."
+      },
+      {
+        keys: ["протокол", "$proto", "proto", "спецификац"],
+        answer: "Протокол Связи называется $Proto и задокументирован в открытой спецификации. Там описан транспорт, шифрование, формат сообщений, механизм поиска контактов без раскрытия номеров (OPRF) и сравнение с MTProto. Безопасность не должна быть чёрным ящиком — всё можно проверить независимо."
+      },
+      {
+        keys: ["цена", "стоимость", "сколько стоит", "платно", "бесплатно"],
+        answer: "Свяжитесь с нами для обсуждения условий. Публичная версия доступна бесплатно. Для корпоративного развёртывания с поддержкой и гарантиями — напишите, обсудим."
+      }
+    ];
+
+    var defaultAnswer = "Хороший вопрос. Если коротко — Связь строит безопасность на принципе «сервер не должен знать ничего». Уточните вопрос или попробуйте спросить иначе — отвечу подробнее. Например: «чем вы отличаетесь от Telegram», «как настроить свой сервер», «что такое федерация».";
+
+    function findAnswer(q) {
+      var ql = q.toLowerCase();
+      for (var i = 0; i < kb.length; i++) {
+        for (var j = 0; j < kb[i].keys.length; j++) {
+          if (ql.indexOf(kb[i].keys[j]) !== -1) return kb[i].answer;
+        }
+      }
+      return defaultAnswer;
+    }
+
+    var messages = document.getElementById("chatMessages");
+    var form = document.getElementById("chatForm");
+    var input = document.getElementById("chatInput");
+    var suggestions = document.getElementById("chatSuggestions");
+
+    function now() {
+      var d = new Date();
+      return d.getHours() + ":" + String(d.getMinutes()).padStart(2, "0");
+    }
+
+    function addMsg(text, role) {
+      var wrapper = document.createElement("div");
+      wrapper.className = "chat-msg chat-msg--" + role;
+      var bubble = document.createElement("div");
+      bubble.className = "chat-bubble";
+      bubble.textContent = text;
+      var time = document.createElement("div");
+      time.className = "chat-time";
+      time.setAttribute("aria-hidden", "true");
+      time.textContent = now();
+      wrapper.appendChild(bubble);
+      wrapper.appendChild(time);
+      messages.appendChild(wrapper);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function addTyping() {
+      var wrapper = document.createElement("div");
+      wrapper.className = "chat-msg chat-msg--bot chat-msg--typing";
+      wrapper.id = "typingIndicator";
+      wrapper.innerHTML = '<div class="chat-bubble"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>';
+      messages.appendChild(wrapper);
+      messages.scrollTop = messages.scrollHeight;
+    }
+
+    function removeTyping() {
+      var t = document.getElementById("typingIndicator");
+      if (t) t.remove();
+    }
+
+    function send(text) {
+      if (!text.trim()) return;
+      suggestions.style.display = "none";
+      addMsg(text, "user");
+      input.value = "";
+      addTyping();
+      var delay = 600 + Math.random() * 600;
+      setTimeout(function () {
+        removeTyping();
+        addMsg(findAnswer(text), "bot");
+      }, delay);
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      send(input.value);
+    });
+
+    document.querySelectorAll(".chat-pill").forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        send(btn.dataset.q);
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
