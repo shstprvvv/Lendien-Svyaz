@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Политика конфиденциальности — Связь</title>
+  <meta name="description" content="Политика конфиденциальности приложения Связь." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="js/site.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container inner">
+      <a class="logo" href="index.html">
+        <img src="img/app_icon.png" alt="Связь" class="logo-img" />
+        Связь
+      </a>
+      <nav class="nav" aria-label="Основное меню">
+        <a href="index.html">Главная</a>
+        <a href="security.html">Безопасность</a>
+        <a href="federation.html">Федерация</a>
+        <a href="support.html">Поддержка</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" style="padding-bottom: 40px;">
+      <div class="container">
+        <h1>Политика конфиденциальности</h1>
+        <p class="hero-lead">
+          Мы создали Связь, чтобы ваши данные принадлежали только вам. Ниже описано, как именно мы защищаем вашу информацию.
+        </p>
+      </div>
+    </section>
+
+    <section class="section-no-reveal" style="padding-top: 0;">
+      <div class="container">
+        <div class="glass" style="padding: 40px; border-radius: var(--radius); text-align: left;" data-ai="fade-up" data-ai-delay="0.1">
+          <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 32px;">
+            Приложение «Связь» (ru.svyaz.app) · Дата вступления в силу: 22 марта 2026 г.
+          </p>
+
+          <h3>1. Общие положения</h3>
+          <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+            Приложение «Связь» — это децентрализованный P2P-мессенджер. Мы не собираем, не храним и не передаём третьим лицам содержимое ваших сообщений и звонков. Все коммуникации проходят напрямую между устройствами через зашифрованный канал.
+          </p>
+
+          <h3>2. Какие данные мы обрабатываем</h3>
+          <ul style="color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; padding-left: 20px;">
+            <li style="margin-bottom: 8px;"><strong>Идентификатор устройства (Peer ID)</strong> — криптографический ключ, генерируемый локально на устройстве. Используется для маршрутизации сообщений. Не связан с вашей личностью.</li>
+            <li style="margin-bottom: 8px;"><strong>Номер телефона</strong> — используется исключительно для обнаружения контактов. Хранится в хешированном виде и не передаётся в открытом виде.</li>
+            <li style="margin-bottom: 8px;"><strong>Push-токен</strong> — токен для доставки push-уведомлений через Apple Push Notification Service. Передаётся сервису OneSignal для доставки уведомлений о входящих звонках и сообщениях.</li>
+            <li style="margin-bottom: 8px;"><strong>Контакты</strong> — при вашем согласии приложение сравнивает хеши телефонных номеров из вашей адресной книги для поиска других пользователей. Номера не покидают устройство в открытом виде.</li>
+          </ul>
+
+          <h3>3. Шифрование</h3>
+          <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+            Все соединения между устройствами защищены протоколами TLS 1.3 и Noise (libp2p). Содержимое сообщений и голосовых звонков шифруется сквозным образом и недоступно серверу-ретранслятору.
+          </p>
+
+          <h3>4. Сервер-ретранслятор (Relay)</h3>
+          <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+            Relay-сервер используется только для установления соединения между устройствами (NAT traversal) и временного хранения зашифрованных сообщений для офлайн-доставки. Сервер не имеет доступа к расшифрованному содержимому.
+          </p>
+
+          <h3>5. Сторонние сервисы</h3>
+          <ul style="color: var(--text-muted); line-height: 1.6; margin-bottom: 24px; padding-left: 20px;">
+            <li style="margin-bottom: 8px;"><strong>OneSignal</strong> — доставка push-уведомлений. Политика конфиденциальности: <a href="https://onesignal.com/privacy_policy" target="_blank" rel="noopener noreferrer" style="color: var(--accent); text-decoration: underline;">https://onesignal.com/privacy_policy</a></li>
+            <li style="margin-bottom: 8px;"><strong>sms.ru</strong> — отправка SMS для верификации номера телефона.</li>
+          </ul>
+
+          <h3>6. Хранение данных</h3>
+          <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+            Все сообщения, история чатов и медиафайлы хранятся исключительно на вашем устройстве. При удалении приложения все данные удаляются безвозвратно.
+          </p>
+
+          <h3>7. Права пользователя</h3>
+          <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 24px;">
+            Вы можете в любой момент удалить приложение и все связанные с ним данные. Поскольку мы не ведём серверных баз данных пользователей, удаление является полным и необратимым.
+          </p>
+
+          <h3>8. Контакты</h3>
+          <p style="color: var(--text-muted); line-height: 1.6; margin-bottom: 0;">
+            По вопросам конфиденциальности: <a href="mailto:privacy@svyaz.app" style="color: var(--accent); text-decoration: underline;">privacy@svyaz.app</a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container inner">
+      <p class="footer-copy">Связь — защищённый мессенджер с E2E-шифрованием; при желании — свой сервер у вас в контуре.</p>
+      <div class="footer-links">
+        <a href="index.html">Главная</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="../PROTOCOL_ru.md">Протокол $Proto</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
